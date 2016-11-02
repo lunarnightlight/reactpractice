@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 // import logo from './logo.svg';
 import './App.css';
 
@@ -6,7 +7,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      header: 'Basic React App',
+
       sum1: { summary: 'Internet was down all week, but we started JS Assessments.'},
       week1: [
         { title: 'JS Assessment', link: 'https://github.com/rmurphey/js-assessment' },
@@ -21,10 +22,14 @@ class App extends Component {
         { title: 'Javascript ES6 Cheatsheet–the best of JS ES6', link: 'https://www.youtube.com/watch?v=AfWYO8t7ed4' },
         { title: 'Javascript ES6 Cheatsheet #2', link: 'https://www.youtube.com/watch?v=LmL0Gh193M0' },
       ],
-      sum3: { summary: 'Started building components' },
+      sum3: { summary: 'Jumped right into React and started building components. Andrew was sick all week, so Derek stepped in.' },
       week3: [
         { title: 'Thinking in React', link: 'https://facebook.github.io/react/docs/thinking-in-react.html' },
 
+      ],
+      sum4: { summary: 'Andrew roused himself from his sickness to help us review state, props, components, and events.'},
+      week4: [
+        { title: 'Handling Events', link: 'https://facebook.github.io/react/docs/handling-events.html' },
       ],
     }
     // For implementing the onClick interactivity: make sure to call setState in the 
@@ -36,7 +41,7 @@ class App extends Component {
     return (
       <div className='App'>
         <div>
-          <Header banner={this.state.header} />
+          <Header header='Basic React App' />
         </div>
 
         <div>
@@ -56,20 +61,37 @@ class App extends Component {
             <Blurb overview={this.state.sum3} />
             <Resources links={this.state.week3} />
         </div>
+
+         <div>
+          <h2>React–Passing Data Through Props and Events</h2>
+            <Blurb overview={this.state.sum4} />
+            <Resources links={this.state.week4} />
+        </div>
+
+        <div>
+          <button>Add a Resource</button>
+        </div>
+
       </div>
     );
   }
 }
 
-class Header extends Component {
-  render() {
-    return (
-      <div>
-        <h1>{this.props.banner}</h1>
-      </div>
-    );
-  }
+function Header(props) {
+  return (
+    <h1>{props.header}</h1>
+  );
 }
+
+// class Header extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <h1>{this.props.banner}</h1>
+//       </div>
+//     );
+//   }
+// }
 
 class Blurb extends Component {
 
