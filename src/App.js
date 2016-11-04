@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
 // import logo from './logo.svg';
 import './App.css';
+// import Header from './Header.js';
+import Blurb from './Blurb.js';
+import Resources from './Resources.js';
+import AddResource from './AddResource.js';
 
 class App extends Component {
   constructor() {
@@ -50,41 +54,28 @@ class App extends Component {
     return (
       <div className='App'>
 
-        <div>
-          <Header header='Basic React App' />
-        </div>
+        <Header header='Basic React App' />
 
-        <div>
-        	<p>{this.state.test}</p>
-        </div>
+      	<p>{this.state.test}</p>
 
-        <div>
-          <AddResource tagline={this.response} />
-        </div>
+        <AddResource tagline={this.response} />
 
-        <div>
-          <h2>ES6</h2>
-            <Blurb overview={this.state.sum1} />
-            <Resources links={this.state.week1} />
-        </div>
+        <h2>Week</h2>
+        <Blurb overview={this.state.sum1} />
+        <Resources links={this.state.week1} />
 
-        <div>
-          <h2>ES6 Continued</h2>
-            <Blurb overview={this.state.sum2} />
-            <Resources links={this.state.week2} />
-        </div> 
+        <h2>Week</h2>
+        <Blurb overview={this.state.sum2} />
+        <Resources links={this.state.week2} />
 
-         <div>
-          <h2>Intro to React</h2>
-            <Blurb overview={this.state.sum3} />
-            <Resources links={this.state.week3} />
-        </div>
+        <h2>Week</h2>
+        <Blurb overview={this.state.sum3} />
+        <Resources links={this.state.week3} />
 
-         <div>
-          <h2>React–Passing Data Through Props and Events</h2>
-            <Blurb overview={this.state.sum4} />
-            <Resources links={this.state.week4} />
-        </div>
+        <h2>Week</h2>
+        <Blurb overview={this.state.sum4} />
+        <Resources links={this.state.week4} />
+
 
       </div>
     );
@@ -109,48 +100,49 @@ function Header(props) {
 //   }
 // }
 
-class Blurb extends Component {
 
-  render() {
-    // const para = this.props.overview.map((item, idx) => {
-    //   return <p key={idx}>{item.summary}</p> 
-    // });
-    // ^Remnant from when I had the summary of the week as part
-    // of the week(n) array in the parent state.
-    const para = this.props.overview.summary;
-    return (
-      <p className='App'>{para}</p>
-    );
-  }
-}
+// class Blurb extends Component {
 
-class Resources extends Component {
+//   render() {
+//     // const para = this.props.overview.map((item, idx) => {
+//     //   return <p key={idx}>{item.summary}</p> 
+//     // });
+//     // ^Remnant from when I had the summary of the week as part
+//     // of the week(n) array in the parent state.
+//     const para = this.props.overview.summary;
+//     return (
+//       <p className='App'>{para}</p>
+//     );
+//   }
+// }
 
-  render() {
-    const material = this.props.links.map((item, idx) => {
-      return <li key={idx}><a href={item.link}>{item.title}</a></li>;
-    });
-    return (
-      <ul className='App'>{material}</ul>
-    );
-  }
-}
+// class Resources extends Component {
 
-class AddResource extends Component {
-	// button to add link
+//   render() {
+//     const material = this.props.links.map((item, idx) => {
+//       return <li key={idx}><a href={item.link}>{item.title}</a></li>;
+//     });
+//     return (
+//       <ul className='App'>{material}</ul>
+//     );
+//   }
+// }
 
-	// CURRENTLY JUST A CONSOLE.LOG FOR EVENT HANDLING PRACTICE PURPOSES
-	// clickEvent = (event) => {
-	// 	event.preventDefault();
-	// 	console.log('Event Pass Successful!');
-	// }
+// class AddResource extends Component {
+// 	// button to add link
 
-	render() {
-		return (
-				<button onClick={this.props.tagline}>Change the Text</button>
-		);
-	}
-}
+// 	// CURRENTLY JUST A CONSOLE.LOG FOR EVENT HANDLING PRACTICE PURPOSES
+// 	// clickEvent = (event) => {
+// 	// 	event.preventDefault();
+// 	// 	console.log('Event Pass Successful!');
+// 	// }
+
+// 	render() {
+// 		return (
+// 				<button onClick={this.props.tagline}>Change the Text</button>
+// 		);
+// 	}
+// }
 
 
 export default App;
