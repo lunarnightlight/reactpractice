@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 // import Header from './Header.js';
+// import Week from './Week.js';
 import Blurb from './Blurb.js';
 import Resources from './Resources.js';
 import AddResource from './AddResource.js';
@@ -14,6 +15,7 @@ class App extends Component {
 
     	test: 'It works!!!',
       sum1: { summary: 'Internet was down all week, but we started JS Assessments.'},
+
       week1: [
         { title: 'JS Assessment', link: 'https://github.com/rmurphey/js-assessment' },
         { title: 'DevDocs–Offline', link: 'https://devdocs.io/offline' },
@@ -63,6 +65,10 @@ class App extends Component {
         <h2>Week</h2>
         <Blurb overview={this.state.sum1} />
         <Resources links={this.state.week1} />
+
+
+        { /* <Week desc={this.state.sum1} links{this.state.week1} /> */ }                                                                   
+
 
         <h2>Week</h2>
         <Blurb overview={this.state.sum2} />
