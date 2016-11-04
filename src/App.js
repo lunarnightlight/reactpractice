@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 // import logo from './logo.svg';
 import './App.css';
 
@@ -8,6 +8,7 @@ class App extends Component {
     super()
     this.state = {
 
+    	test: 'It works!!!',
       sum1: { summary: 'Internet was down all week, but we started JS Assessments.'},
       week1: [
         { title: 'JS Assessment', link: 'https://github.com/rmurphey/js-assessment' },
@@ -36,13 +37,29 @@ class App extends Component {
     // child component. 
     // You need to bind in the parent component in order to be able to pass a state change implemented in a child
     // component up to the parent component.
+    console.log(this);
+    this.response = this.response.bind(this);
   }
+
+  response(event) {
+  	event.preventDefault();
+		this.setState( {test: 'Event Pass Successful!'} );
+	}
+
   render() {
     return (
       <div className='App'>
+
         <div>
-        
           <Header header='Basic React App' />
+        </div>
+
+        <div>
+        	<p>{this.state.test}</p>
+        </div>
+
+        <div>
+          <AddResource tagline={this.response} />
         </div>
 
         <div>
@@ -69,10 +86,6 @@ class App extends Component {
             <Resources links={this.state.week4} />
         </div>
 
-        <div>
-          <button>Add a Resource</button>
-        </div>
-
       </div>
     );
   }
@@ -83,6 +96,8 @@ function Header(props) {
     <h1>{props.header}</h1>
   );
 }
+
+
 
 // class Header extends Component {
 //   render() {
@@ -119,6 +134,22 @@ class Resources extends Component {
       <ul className='App'>{material}</ul>
     );
   }
+}
+
+class AddResource extends Component {
+	// button to add link
+
+	// CURRENTLY JUST A CONSOLE.LOG FOR EVENT HANDLING PRACTICE PURPOSES
+	// clickEvent = (event) => {
+	// 	event.preventDefault();
+	// 	console.log('Event Pass Successful!');
+	// }
+
+	render() {
+		return (
+				<button onClick={this.props.tagline}>Change the Text</button>
+		);
+	}
 }
 
 
