@@ -14,8 +14,8 @@ class App extends Component {
     this.state = {
 
     	test: 'It works!!!',
+      label1: 'Week 1: ES6',
       sum1: { summary: 'Internet was down all week, but we started JS Assessments.'},
-
       week1: [
         { title: 'JS Assessment', link: 'https://github.com/rmurphey/js-assessment' },
         { title: 'DevDocs–Offline', link: 'https://devdocs.io/offline' },
@@ -23,21 +23,25 @@ class App extends Component {
         { title: 'Arrow Functions in JavaScript–What, Why and How', link: 'https://www.youtube.com/watch?v=6sQDTgOqh-I' },
         
       ],
+      label2: 'Week 2: ES6 Continued',
       sum2: { summary: 'Continued JS Assessments and talked about how to get a job as a junior dev.' },
       week2: [
         { title: 'Essential ES6', link: 'https://www.youtube.com/watch?v=CozSF5abcTA' },
         { title: 'Javascript ES6 Cheatsheet–the best of JS ES6', link: 'https://www.youtube.com/watch?v=AfWYO8t7ed4' },
         { title: 'Javascript ES6 Cheatsheet #2', link: 'https://www.youtube.com/watch?v=LmL0Gh193M0' },
       ],
+      label3: 'Week 3: Intro to React',
       sum3: { summary: 'Jumped right into React and started building components. Andrew was sick all week, so Derek stepped in.' },
       week3: [
         { title: 'Thinking in React', link: 'https://facebook.github.io/react/docs/thinking-in-react.html' },
 
       ],
+      label4: 'Week 4: Passing Data with State and Props',
       sum4: { summary: 'Andrew roused himself from his sickness to help us review state, props, components, and events.'},
       week4: [
         { title: 'Handling Events', link: 'https://facebook.github.io/react/docs/handling-events.html' },
       ],
+      label5: 'Week 5: Forms and Controlled and Uncontrolled Inputs',
       sum5: { summary: 'Started learning how to implement forms.' },
       week5: [
         { title: 'React for Everyone #13: Controlled Inputs', link: 'https://www.youtube.com/watch?v=BvtQMxekmH0' },
@@ -70,16 +74,16 @@ class App extends Component {
         <AddResource tagline={this.response} />
         { /* The button that changes the text above when clicked. */ }
 
-        <Week overview={this.state.sum1} links={this.state.week1} />                                                                   
+        <Week label={this.state.label1} overview={this.state.sum1} links={this.state.week1} />                                                                   
         { /* forIn is the method for iterating over an object */ } 
 
-        <Week overview={this.state.sum2} links={this.state.week2} />  
+        <Week label={this.state.label2} overview={this.state.sum2} links={this.state.week2} />  
 
-        <Week overview={this.state.sum3} links={this.state.week3} /> 
+        <Week label={this.state.label3} overview={this.state.sum3} links={this.state.week3} /> 
 
-        <Week overview={this.state.sum4} links={this.state.week4} /> 
+        <Week label={this.state.label4} overview={this.state.sum4} links={this.state.week4} /> 
 
-        <Week overview={this.state.sum5} links={this.state.week5} /> 
+        <Week label={this.state.label5} overview={this.state.sum5} links={this.state.week5} /> 
 
         { /*
         <h2>Week</h2>

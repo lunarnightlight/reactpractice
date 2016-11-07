@@ -8,6 +8,7 @@ export default class Week extends Component {
     });
 		return (
 			<div>
+				<h2 className='App'>{this.props.label}</h2>
 				<p className='App'>{para}</p>
 				<ul className='App'>{material}</ul>
 			</div>
