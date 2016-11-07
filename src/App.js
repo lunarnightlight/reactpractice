@@ -38,6 +38,12 @@ class App extends Component {
       week4: [
         { title: 'Handling Events', link: 'https://facebook.github.io/react/docs/handling-events.html' },
       ],
+      sum5: { summary: 'Started learning how to implement forms.' },
+      week5: [
+        { title: 'React for Everyone #13: Controlled Inputs', link: 'https://www.youtube.com/watch?v=BvtQMxekmH0' },
+        { title: 'Forms–React', link: 'https://facebook.github.io/react/docs/forms.html' },
+
+      ],
     }
     // For implementing the onClick interactivity: make sure to call setState in the 
     // child component. 
@@ -59,8 +65,10 @@ class App extends Component {
         <Header header='Basic React App' />
 
       	<p>{this.state.test}</p>
+        { /* The text that I want to change when a user clicks the button below. */ }
 
         <AddResource tagline={this.response} />
+        { /* The button that changes the text above when clicked. */ }
 
         <h2>Week</h2>
         <Blurb overview={this.state.sum1} />
@@ -68,6 +76,7 @@ class App extends Component {
 
 
         { /* <Week desc={this.state.sum1} links{this.state.week1} /> */ }                                                                   
+        { /* forIn is the method for iterating over an object */ } 
 
 
         <h2>Week</h2>
