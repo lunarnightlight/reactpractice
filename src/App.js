@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
 // import logo from './logo.svg';
 import './App.css';
-// import Header from './Header.js';
-// import Week from './Week.js';
-import Blurb from './Blurb.js';
-import Resources from './Resources.js';
+import Header from './Header.js';
+import Week from './Week.js';
+// import Blurb from './Blurb.js';
+// import Resources from './Resources.js';
 import AddResource from './AddResource.js';
 
 class App extends Component {
@@ -70,14 +70,21 @@ class App extends Component {
         <AddResource tagline={this.response} />
         { /* The button that changes the text above when clicked. */ }
 
+        <Week overview={this.state.sum1} links={this.state.week1} />                                                                   
+        { /* forIn is the method for iterating over an object */ } 
+
+        <Week overview={this.state.sum2} links={this.state.week2} />  
+
+        <Week overview={this.state.sum3} links={this.state.week3} /> 
+
+        <Week overview={this.state.sum4} links={this.state.week4} /> 
+
+        <Week overview={this.state.sum5} links={this.state.week5} /> 
+
+        { /*
         <h2>Week</h2>
         <Blurb overview={this.state.sum1} />
         <Resources links={this.state.week1} />
-
-
-        { /* <Week desc={this.state.sum1} links{this.state.week1} /> */ }                                                                   
-        { /* forIn is the method for iterating over an object */ } 
-
 
         <h2>Week</h2>
         <Blurb overview={this.state.sum2} />
@@ -90,18 +97,18 @@ class App extends Component {
         <h2>Week</h2>
         <Blurb overview={this.state.sum4} />
         <Resources links={this.state.week4} />
-
+        */ }
 
       </div>
     );
   }
 }
 
-function Header(props) {
-  return (
-    <h1>{props.header}</h1>
-  );
-}
+// function Header(props) {
+//   return (
+//     <h1>{props.header}</h1>
+//   );
+// }
 
 
 

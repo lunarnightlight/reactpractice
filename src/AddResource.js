@@ -11,7 +11,7 @@ export default class AddResource extends Component {
 
 	render() {
 		return (
-				<button onClick={this.props.tagline}>Change the Text</button>
+			<button onClick={this.props.tagline}>Change the Text</button>
 		);
 	}
 }
