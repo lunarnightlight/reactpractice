@@ -6,7 +6,7 @@ import Header from './Header.js';
 import Week from './Week.js';
 // import Blurb from './Blurb.js';
 // import Resources from './Resources.js';
-import AddResource from './AddResource.js';
+import EventPractice from './EventPractice.js';
 
 class App extends Component {
   constructor() {
@@ -71,7 +71,7 @@ class App extends Component {
       	<p>{this.state.test}</p>
         { /* The text that I want to change when a user clicks the button below. */ }
 
-        <AddResource tagline={this.response} />
+        <EventPractice tagline={this.response} />
         { /* The button that changes the text above when clicked. */ }
 
         <Week label={this.state.label1} overview={this.state.sum1} links={this.state.week1} />                                                                   
