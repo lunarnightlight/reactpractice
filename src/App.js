@@ -85,7 +85,11 @@ class App extends Component {
 
         <Week label={this.state.label5} overview={this.state.sum5} links={this.state.week5} /> 
 
-        { /*
+
+        { /*       
+        <input type='text' value={this.state.another} /> 
+
+        
         <h2>Week</h2>
         <Blurb overview={this.state.sum1} />
         <Resources links={this.state.week1} />
