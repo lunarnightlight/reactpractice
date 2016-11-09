@@ -55,7 +55,6 @@ class App extends Component {
     // component up to the parent component.
     console.log(this);
     this.response = this.response.bind(this);
-    this.rewResource = this.newResource.bind(this);
   }
 
   response(event) {
@@ -63,13 +62,13 @@ class App extends Component {
 		this.setState( {test: 'Event Pass Successful!'} );
 	}
 
-  newResource(resource) {
-    const resources = {...this.state.resources};
-    this.setState({resources});
-  // 'resources' is a hypothetical property in the state that holds a list of resources.
-  // Right now, what I have are separate resource properties for each week. Maybe I can 
-  // combine them into one object under the key 'resources'?
-  }
+  // newResource(resource) {
+  //   const resources = {...this.state.resources};
+  //   this.setState({resources});
+  // // 'resources' is a hypothetical property in the state that holds a list of resources.
+  // // Right now, what I have are separate resource properties for each week. Maybe I can 
+  // // combine them into one object under the key 'resources'?
+  // }
 
   render() {
     return (
