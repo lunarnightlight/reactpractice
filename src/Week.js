@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AddResourceForm from './AddResourceForm.js';
 
 export default class Week extends Component {
 	render() {
@@ -11,6 +12,7 @@ export default class Week extends Component {
 				<h2 className='App'>{this.props.label}</h2>
 				<p className='App'>{para}</p>
 				<ul className='App'>{material}</ul>
+				<AddResourceForm newresource={this.props.newResource} />
 			</div>
 		);
 	}
