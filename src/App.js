@@ -101,6 +101,8 @@ class App extends Component {
         { title: 'Javascript Fatigue', link: 'https://medium.com/@ericclemmons/javascript-fatigue-48d4011b6fc4#.w2sa5qclk' },
                       
       ],
+      label6: 'Week 6: Lifecycle Events',
+      sum6: { summary: 'Implemented lifecycle events to add a week component.' },
       week6: [
         { title: 'State and Lifecycle', link: 'https://facebook.github.io/react/docs/state-and-lifecycle.html' },
         { title: 'ReactJS Basics - #11 Communicating between Parent and Child Component', link: 'https://www.youtube.com/watch?v=2teBTI0_eRw' },
@@ -108,7 +110,7 @@ class App extends Component {
         { title: 'ReactJS Basics - #13 Two-Way-Binding', link: 'https://www.youtube.com/watch?v=IK9k9hSuYeA' },
         { title: 'ReactJS Basics - #14 Component Lifecycle', link: 'https://www.youtube.com/watch?v=Oioo0IdoEls' },
         { title: 'React.Component', link: 'https://facebook.github.io/react/docs/react-component.html' },
-        { title: '', link: '' },
+        { title: 'What are typical use cases for React lifecycle methods like componentWillReceiveProps', link: 'https://stackoverflow.com/questions/38929991/what-are-typical-use-cases-for-react-lifecycle-methods-like-componentwillreceive' },
         { title: '', link: '' },
         { title: '', link: '' },
         { title: '', link: '' },
@@ -167,6 +169,8 @@ class App extends Component {
         <Week label={this.state.label4} overview={this.state.sum4} links={this.state.week4} /> 
 
         <Week label={this.state.label5} overview={this.state.sum5} links={this.state.week5} /> 
+
+        <Week label={this.state.label6} overview={this.state.sum6} links={this.state.week6} /> 
 
 
         { /*       
