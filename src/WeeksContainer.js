@@ -5,10 +5,6 @@ export default class WeeksContainer extends Component {
 	constructor(props) {
 		super(props);
 		
-		this.state = {
-			resource: 'Link Title',
-			link: 'URL',
-		}
 		// this.rewResource = this.newResource.bind(this);
 		// this.rewLink = this.newLink.bind(this);
 	}
@@ -27,9 +23,10 @@ export default class WeeksContainer extends Component {
 
 	render() {
 		const weeksObj = this.props.weeksdata;
+
 		
 		const weeksMap = weeksObj.map((item, idx) => {			
-			return <Week key={idx} weekdata={weeksObj[idx]} />
+			return <Week key={idx} weekdata={weeksObj[idx]} idx={idx} entrySubmit={this.props.entrySubmit} />
 		});
 
     // const material = this.props.links.map((item, idx) => {

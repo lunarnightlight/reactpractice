@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './Header.js';
 import WeeksContainer from './WeeksContainer.js';
+import Week from './Week.js';
 // import Blurb from './Blurb.js';
 // import Resources from './Resources.js';
 import EventPractice from './EventPractice.js';
@@ -148,6 +149,7 @@ class App extends Component {
     // component up to the parent component.
     console.log(this);
     this.response = this.response.bind(this);
+    this.entrySubmit = this.entrySubmit.bind(this);
   }
 
   response(event) {
@@ -155,13 +157,22 @@ class App extends Component {
 		this.setState( {test: 'Event Pass Successful!'} );
 	}
 
-  // newResource(resource) {
-  //   const resources = {...this.state.resources};
-  //   this.setState({resources});
-  // // 'resources' is a hypothetical property in the state that holds a list of resources.
-  // // Right now, what I have are separate resource properties for each week. Maybe I can 
-  // // combine them into one object under the key 'resources'?
-  // }
+  entrySubmit(newTitle, newURL, idx, event) {
+    event.preventDefault();
+    const newEntry = { title: newTitle, link: newURL }
+    const week = this.state.content[idx].resources;
+    // week is a reference to specific data in state
+
+    console.log(newEntry);
+    console.log(week);
+    this.setState( { [week]: week.concat( newEntry ) } );
+    // It seems that both [week] and week.push(newEntry)  
+    // are being changed with `push`, which is why I 
+    // get that weird [Object, object, object ] array.
+
+  }
+
+
 
   render() {
 
@@ -180,7 +191,7 @@ class App extends Component {
         <EventPractice tagline={this.response} />
         { /* The button that changes the text above when clicked. */ }
 
-        <WeeksContainer weeksdata={this.state.content} />
+        <WeeksContainer weeksdata={this.state.content} entrySubmit={this.entrySubmit} />
         
         { /* 
 
