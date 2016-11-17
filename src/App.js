@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './Header.js';
 import WeeksContainer from './WeeksContainer.js';
-import Week from './Week.js';
+// import Week from './Week.js';
 // import Blurb from './Blurb.js';
 // import Resources from './Resources.js';
 import EventPractice from './EventPractice.js';
