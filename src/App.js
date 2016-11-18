@@ -159,18 +159,21 @@ class App extends Component {
 
   entrySubmit(newTitle, newURL, idx, event) {
     event.preventDefault();
-    const newContent = this.state.content.slice();
+    const newContent = [ ...this.state.content ];
+    // The spread operator takes an iterable and expands it into the individual
+    // elements. Here, we're using it to create a new array with all the elements
+    // of `this.state.content`.
+
+
     const newEntry = [ { title: newTitle, link: newURL } ];
-    console.log(newEntry);
-    const updatedContent = newContent[idx].resources.concat( newEntry ); 
-    console.log(updatedContent);
+    const updatedWeek = newContent[idx].resources.concat( newEntry );
+    newContent[idx].resources = updatedWeek
+    // ^assigning updatedWeek to the its similar place in newContent
 
-    // week is a reference to specific data in state
-
-    // // console.log(newEntry);
+    // console.log(newEntry);
     // console.log('this.state.content: array of resource arrays ',  this.state.content);
     // console.log('new copy of this.state.content: array of resource arrays ', newContent);
-    // // ^both print the array of resource arrays (this.state.content)
+    // ^both print the array of resource arrays (this.state.content)
 
     // console.log('resource list for specific week ', newContent[idx].resources);
     // // prints the array of resources for a specific week before the
@@ -181,11 +184,8 @@ class App extends Component {
     // // new resource concatenated
     
 
-    this.setState( { content: updatedContent } );
-    // It seems that both [week] and week.push(newEntry)  
-    // are being changed with `push`, which is why I 
-    // get that weird [Object, object, object ] array.
-    window.setTimeout(() => console.log('what is state now? ', this.state), 1000);
+    this.setState( { content: newContent } );
+    // ^set content to the new content array with our edit.
     
   }
 

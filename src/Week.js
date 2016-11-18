@@ -33,7 +33,8 @@ export default class Week extends Component {
 
 		// Map over the week object (we should have just one here)
 		// to render each resource list.
-		console.log('singleWeekObj ', singleWeekObj);
+		// console.log('singleWeekObj ', singleWeekObj);
+
 		const resources = singleWeekObj.resources.map((item, idx) => {
 			return <li key={idx}><a href={item.link}>{item.title}</a></li>
 		});
