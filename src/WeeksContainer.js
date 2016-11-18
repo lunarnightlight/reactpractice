@@ -23,7 +23,7 @@ export default class WeeksContainer extends Component {
 
 	render() {
 		const weeksObj = this.props.weeksdata;
-
+		// console.log(weeksObj);
 		
 		const weeksMap = weeksObj.map((item, idx) => {			
 			return <Week key={idx} weekdata={weeksObj[idx]} idx={idx} entrySubmit={this.props.entrySubmit} />

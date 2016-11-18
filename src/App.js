@@ -147,7 +147,7 @@ class App extends Component {
     // child component. 
     // You need to bind in the parent component in order to be able to pass a state change implemented in a child
     // component up to the parent component.
-    console.log(this);
+    // console.log(this);
     this.response = this.response.bind(this);
     this.entrySubmit = this.entrySubmit.bind(this);
   }
@@ -159,17 +159,34 @@ class App extends Component {
 
   entrySubmit(newTitle, newURL, idx, event) {
     event.preventDefault();
-    const newEntry = { title: newTitle, link: newURL }
-    const week = this.state.content[idx].resources;
+    const newContent = this.state.content.slice();
+    const newEntry = [ { title: newTitle, link: newURL } ];
+    console.log(newEntry);
+    const updatedContent = newContent[idx].resources.concat( newEntry ); 
+    console.log(updatedContent);
+
     // week is a reference to specific data in state
 
-    console.log(newEntry);
-    console.log(week);
-    this.setState( { [week]: week.concat( newEntry ) } );
+    // // console.log(newEntry);
+    // console.log('this.state.content: array of resource arrays ',  this.state.content);
+    // console.log('new copy of this.state.content: array of resource arrays ', newContent);
+    // // ^both print the array of resource arrays (this.state.content)
+
+    // console.log('resource list for specific week ', newContent[idx].resources);
+    // // prints the array of resources for a specific week before the
+    // // concatenation of the new resource
+
+    // console.log('resource list for specific week with new entry ', updatedContent);
+    // // prints the array of resources for a specific week with the
+    // // new resource concatenated
+    
+
+    this.setState( { content: updatedContent } );
     // It seems that both [week] and week.push(newEntry)  
     // are being changed with `push`, which is why I 
     // get that weird [Object, object, object ] array.
-
+    window.setTimeout(() => console.log('what is state now? ', this.state), 1000);
+    
   }
 
 

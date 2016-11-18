@@ -9,15 +9,12 @@ export default class Week extends Component {
 			link: 'URL',
 		}
 		this.updateResources = this.updateResources.bind(this);
-		this.updateLinks = this.updateLinks.bind(this); 
+		this.updateLinks = this.updateLinks.bind(this);
+		 
 	}
 
   updateResources(event) {
-    // const resources = {...this.state.resources};
     this.setState({resource: event.target.value});
-  // 'resources' is a hypothetical property in the state that holds a list of resources.
-  // Right now, what I have are separate resource properties for each week. Maybe I can 
-  // combine them into one object under the key 'resources'?
   }
 
   updateLinks(event) {
@@ -27,6 +24,7 @@ export default class Week extends Component {
 
 	render() {
 		let singleWeekObj = this.props.weekdata;
+		// console.log(singleWeekObj.resources);
 		const label = singleWeekObj.label;
 		const summary = singleWeekObj.summary;
 
@@ -35,7 +33,7 @@ export default class Week extends Component {
 
 		// Map over the week object (we should have just one here)
 		// to render each resource list.
-
+		console.log('singleWeekObj ', singleWeekObj);
 		const resources = singleWeekObj.resources.map((item, idx) => {
 			return <li key={idx}><a href={item.link}>{item.title}</a></li>
 		});
