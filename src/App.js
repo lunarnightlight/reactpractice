@@ -163,7 +163,8 @@ class App extends Component {
     // The spread operator takes an iterable and expands it into the individual
     // elements. Here, we're using it to create a new array with all the elements
     // of `this.state.content`.
-
+    // Slice doesn't work because it makes an array-like object, but not an 
+    // actual array. Concat() doesn't work on non-arrays.
 
     const newEntry = [ { title: newTitle, link: newURL } ];
     const updatedWeek = newContent[idx].resources.concat( newEntry );
