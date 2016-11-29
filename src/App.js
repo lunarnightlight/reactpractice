@@ -158,6 +158,7 @@ class App extends Component {
     // console.log(this);
     this.response = this.response.bind(this);
     this.entrySubmit = this.entrySubmit.bind(this);
+    this.newWeek = this.newWeek.bind(this);
   }
 
   response(event) {
@@ -176,7 +177,7 @@ class App extends Component {
 
     const newEntry = [ { title: newTitle, link: newURL } ];
     const updatedWeek = newContent[idx].resources.concat( newEntry );
-    newContent[idx].resources = updatedWeek
+    newContent[idx].resources = updatedWeek;
     // ^assigning updatedWeek to the its similar place in newContent
 
     // console.log(newEntry);
@@ -198,23 +199,24 @@ class App extends Component {
     
   }
 
-  // newWeek(newLabel, newSummary, newResources, event) {
-  //   event.preventDefault();
-  //   const newContent = [ ...this.state.content ];
-  //   // ^making a copy of the parent state without the new Week added yet
-  //   const newWeek = {
-  //     label: newLabel,
-  //     summary: newSummary,
-  //     resources: newResources,
-  //   };
-  //   const updatedContent = newContent.concat( newWeek );
-  //   newContent = updatedContent;
-  //   // making the pre-appended copy of state (newContent) the same as the copy
-  //   // with the new Week (updatedWeek). 
-  //   this.setState( {content: newContent} );
-  //   // ^The "merged" copy of state will be compared to to the actual DOM and 
-  //   // prompt the rerender.
-  // }
+  newWeek(newLabel, newSummary, newResources, event) {
+    event.preventDefault();
+    let newContent = [ ...this.state.content ];
+    // ^making a copy of the parent state without the new Week added yet
+    const newWeek = {
+      label: newLabel,
+      summary: newSummary,
+      resources: newResources,
+    };
+    const updatedContent = newContent.concat( newWeek );
+    newContent = updatedContent;
+    // making the pre-appended copy of state (newContent) the same as the copy
+    // with the new Week (updatedWeek). 
+    this.setState( {content: newContent} );
+    // ^The "merged" copy of state will be compared to to the actual DOM and 
+    // prompt the rerender.
+
+  }
 
 
   render() {
@@ -235,8 +237,12 @@ class App extends Component {
         { /* The button that changes the text above when clicked. */ }
 
         <WeeksContainer weeksdata={this.state.content} entrySubmit={this.entrySubmit} />
-        
 
+        <form>
+          <input type='text' value={this.newLabel} placeholder='Week Label' />
+          <input type='text' value={this.newSummary} placeholder='Summary' />
+          <button onClick={ (event) => { this.newWeek(this.newLabel, this.newSummary, event) }}>Add a New Week</button>
+        </form>
 
 
         { /* 
