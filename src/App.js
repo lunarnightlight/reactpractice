@@ -125,21 +125,29 @@ class App extends Component {
             { title: 'ReactJS Basics - #14 Component Lifecycle', link: 'https://www.youtube.com/watch?v=Oioo0IdoEls' },
             { title: 'React.Component', link: 'https://facebook.github.io/react/docs/react-component.html' },
             { title: 'What are typical use cases for React lifecycle methods like componentWillReceiveProps', link: 'https://stackoverflow.com/questions/38929991/what-are-typical-use-cases-for-react-lifecycle-methods-like-componentwillreceive' },
+            { title: 'A Study Plan To Cure JavaScript Fatigue', link: 'https://medium.freecodecamp.com/a-study-plan-to-cure-javascript-fatigue-8ad3a54f2eb1#.tmddmhoay' },
+            { title: 'create-react-app github page', link: 'https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages' },       
+          ], 
+        },
+
+        {
+          label: 'Week 7: Styling',
+          summary: 'Styling paradigms and approaches. Also started shifting to personal projects.',
+          resources: [
+            { title: 'Michael Chan - Inline Styles: themes, media queries, contexts, & when it\'s best to use CSS', link: 'https://www.youtube.com/watch?v=ERB1TJBn32c' },
+            { title: 'DOM Elements', link: 'https://facebook.github.io/react/docs/dom-elements.html#style' },   
+            { title: 'Radium Style Manager Github Page', link: 'https://github.com/FormidableLabs/radium' },
+            { title: 'Installing a Dependency Instructions', link: 'https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#installing-a-dependency' },
+            { title: '', link: '' },
+            { title: '', link: '' },
+            { title: '', link: '' },
             { title: '', link: '' },
             { title: '', link: '' },
             { title: '', link: '' },
             { title: '', link: '' },   
-            { title: '', link: '' },
-            { title: '', link: '' },
-            { title: '', link: '' },
-            { title: '', link: '' },
-            { title: '', link: '' },
-            { title: '', link: '' },
-            { title: '', link: '' },
-            { title: '', link: '' },
-            { title: '', link: '' },          
-          ], 
+          ],    
         },
+
       ],
     }
     
@@ -190,6 +198,23 @@ class App extends Component {
     
   }
 
+  // newWeek(newLabel, newSummary, newResources, event) {
+  //   event.preventDefault();
+  //   const newContent = [ ...this.state.content ];
+  //   // ^making a copy of the parent state without the new Week added yet
+  //   const newWeek = {
+  //     label: newLabel,
+  //     summary: newSummary,
+  //     resources: newResources,
+  //   };
+  //   const updatedContent = newContent.concat( newWeek );
+  //   newContent = updatedContent;
+  //   // making the pre-appended copy of state (newContent) the same as the copy
+  //   // with the new Week (updatedWeek). 
+  //   this.setState( {content: newContent} );
+  //   // ^The "merged" copy of state will be compared to to the actual DOM and 
+  //   // prompt the rerender.
+  // }
 
 
   render() {
@@ -211,6 +236,9 @@ class App extends Component {
 
         <WeeksContainer weeksdata={this.state.content} entrySubmit={this.entrySubmit} />
         
+
+
+
         { /* 
 
         <Week label={this.state.label1} overview={this.state.sum1} links={this.state.week1} />                                                                   
