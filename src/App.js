@@ -8,6 +8,7 @@ import WeeksContainer from './WeeksContainer.js';
 // import Blurb from './Blurb.js';
 // import Resources from './Resources.js';
 import EventPractice from './EventPractice.js';
+import AddWeek from './AddWeek.js';
 
 class App extends Component {
   constructor() {
@@ -199,19 +200,23 @@ class App extends Component {
     
   }
 
-  newWeek(newLabel, newSummary, newResources, event) {
+  newWeek(newLabel, newSummary, event) {
     event.preventDefault();
+    
     let newContent = [ ...this.state.content ];
     // ^making a copy of the parent state without the new Week added yet
+    console.log('newContent (copy of this.state.content ' ,newContent);
     const newWeek = {
       label: newLabel,
       summary: newSummary,
-      resources: newResources,
     };
     const updatedContent = newContent.concat( newWeek );
+    console.log('updatedContent ', updatedContent);
     newContent = updatedContent;
     // making the pre-appended copy of state (newContent) the same as the copy
     // with the new Week (updatedWeek). 
+    console.log('newContent ', newContent);
+
     this.setState( {content: newContent} );
     // ^The "merged" copy of state will be compared to to the actual DOM and 
     // prompt the rerender.
@@ -238,78 +243,12 @@ class App extends Component {
 
         <WeeksContainer weeksdata={this.state.content} entrySubmit={this.entrySubmit} />
 
-        <form>
-          <input type='text' value={this.newLabel} placeholder='Week Label' />
-          <input type='text' value={this.newSummary} placeholder='Summary' />
-          <button onClick={ (event) => { this.newWeek(this.newLabel, this.newSummary, event) }}>Add a New Week</button>
-        </form>
-
-
-        { /* 
-
-        <Week label={this.state.label1} overview={this.state.sum1} links={this.state.week1} />                                                                   
-        { /* forIn is the method for iterating over an object 
-
-        <Week label={this.state.label2} overview={this.state.sum2} links={this.state.week2} />  
-
-        <Week label={this.state.label3} overview={this.state.sum3} links={this.state.week3} /> 
-
-        <Week label={this.state.label4} overview={this.state.sum4} links={this.state.week4} /> 
-
-        <Week label={this.state.label5} overview={this.state.sum5} links={this.state.week5} /> 
-
-        <Week label={this.state.label6} overview={this.state.sum6} links={this.state.week6} /> 
-
-
-        instead of hard coding each Week component like above, we need to funnel all of the weeks
-        into map so that when we update state with a new week, it know to add a week using 
-        a lifecycle method.
-
-
-        <input type='text' value={this.state.another} /> 
-
-        
-        <h2>Week</h2>
-        <Blurb overview={this.state.sum1} />
-        <Resources links={this.state.week1} />
-
-        <h2>Week</h2>
-        <Blurb overview={this.state.sum2} />
-        <Resources links={this.state.week2} />
-
-        <h2>Week</h2>
-        <Blurb overview={this.state.sum3} />
-        <Resources links={this.state.week3} />
-
-        <h2>Week</h2>
-        <Blurb overview={this.state.sum4} />
-        <Resources links={this.state.week4} />
-
-        */ }
+        <AddWeek weeksdata={this.state.content} newWeek={this.newWeek} />
 
       </div>
     );
   }
 }
-
-// function Header(props) {
-//   return (
-//     <h1>{props.header}</h1>
-//   );
-// }
-
-
-
-// class Header extends Component {
-//   render() {
-//     return (
-//       <div>
-//         <h1>{this.props.banner}</h1>
-//       </div>
-//     );
-//   }
-// }
-
 
 // class Blurb extends Component {
 

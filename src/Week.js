@@ -10,7 +10,6 @@ export default class Week extends Component {
 		}
 		this.updateResources = this.updateResources.bind(this);
 		this.updateLinks = this.updateLinks.bind(this);
-		 
 	}
 
   updateResources(event) {
@@ -20,7 +19,6 @@ export default class Week extends Component {
   updateLinks(event) {
   	this.setState({link: event.target.value});
   }
-
 
 	render() {
 		let singleWeekObj = this.props.weekdata;
