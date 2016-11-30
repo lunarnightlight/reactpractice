@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 // import ReactDOM from 'react-dom';
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 import Header from './Header.js';
 import WeeksContainer from './WeeksContainer.js';
-// import Week from './Week.js';
-// import Blurb from './Blurb.js';
-// import Resources from './Resources.js';
 import EventPractice from './EventPractice.js';
 import AddWeek from './AddWeek.js';
+import Radium from 'radium';
+
+
 
 class App extends Component {
   constructor() {
@@ -234,6 +234,8 @@ class App extends Component {
       <div className='App'>
 
         <Header header='Basic React App' />
+
+        <img src={logo} alt='react logo' width='75' height='75' />
 
       	<p>{this.state.test}</p>
         { /* The text that I want to change when a user clicks the button below. */ }
