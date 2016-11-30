@@ -19,9 +19,8 @@ export default class Week extends Component {
 		this.setState( {summary: event.target.value} );
 	}
 
+
 	render() {
-
-
 
 		return (
 			<div>
@@ -29,6 +28,7 @@ export default class Week extends Component {
         <form>
           <input type='text' value={this.state.label} onChange={this.updateWeekLabel.bind(this)} />
           <input type='text' value={this.state.summary} onChange={this.updateWeekSum.bind(this)} />
+
           <button onClick={ (event) => { this.props.newWeek(this.state.label, this.state.summary, event) }}>Add a New Week</button>
         </form>
 

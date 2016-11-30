@@ -202,13 +202,13 @@ class App extends Component {
 
   newWeek(newLabel, newSummary, event) {
     event.preventDefault();
-    
     let newContent = [ ...this.state.content ];
     // ^making a copy of the parent state without the new Week added yet
-    console.log('newContent (copy of this.state.content ' ,newContent);
+    console.log('newContent (copy of this.state.content) ' ,newContent);
     const newWeek = {
       label: newLabel,
       summary: newSummary,
+      resources: [],
     };
     const updatedContent = newContent.concat( newWeek );
     console.log('updatedContent ', updatedContent);
