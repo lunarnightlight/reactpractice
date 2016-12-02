@@ -9,7 +9,6 @@ import AddWeek from './AddWeek.js';
 import Radium from 'radium';
 
 
-
 class App extends Component {
   constructor() {
     super()
@@ -139,11 +138,11 @@ class App extends Component {
             { title: 'DOM Elements', link: 'https://facebook.github.io/react/docs/dom-elements.html#style' },   
             { title: 'Radium Style Manager Github Page', link: 'https://github.com/FormidableLabs/radium' },
             { title: 'Installing a Dependency Instructions', link: 'https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#installing-a-dependency' },
-            { title: '', link: '' },
-            { title: '', link: '' },
-            { title: '', link: '' },
-            { title: '', link: '' },
-            { title: '', link: '' },
+            { title: 'Getting Started with TDD with React', link: 'https://daveceddia.com/getting-started-with-tdd-in-react/#' },
+            { title: 'Draft.js–Rich Text Editor Framework for React', link: 'https://facebook.github.io/draft-js/' },
+            { title: 'Re-base', link: 'https://github.com/tylermcginnis/re-base' },
+            { title: 'Getting Started with React and Firebase, Part 2–Firecasts', link: 'https://www.youtube.com/watch?v=p4XTMvagQ2Q' },
+            { title: 'Combining Redux and Firebase', link: 'https://www.youtube.com/watch?v=UHJq5NOtNG4' },
             { title: '', link: '' },
             { title: '', link: '' },   
           ],    
@@ -224,6 +223,7 @@ class App extends Component {
   }
 
 
+
   render() {
 
     // const weeks = this.state.weeks.map((item, idx) => { 
@@ -233,9 +233,9 @@ class App extends Component {
     return (
       <div className='App'>
 
-        <Header header='Basic React App' />
+        <Header header='Basic React App' className='App-header' />
 
-        <img src={logo} alt='react logo' width='75' height='75' />
+        <img src={logo} alt='react logo' className='App-logo' />
 
       	<p>{this.state.test}</p>
         { /* The text that I want to change when a user clicks the button below. */ }
@@ -243,7 +243,7 @@ class App extends Component {
         <EventPractice tagline={this.response} />
         { /* The button that changes the text above when clicked. */ }
 
-        <WeeksContainer weeksdata={this.state.content} entrySubmit={this.entrySubmit} />
+        <WeeksContainer weeksdata={this.state.content} entrySubmit={this.entrySubmit} className='App.App-body' />
 
         <AddWeek weeksdata={this.state.content} newWeek={this.newWeek} />
 
